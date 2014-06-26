@@ -26,8 +26,8 @@ class Test(unittest.TestCase):
                 fi;
             }"""
 
-        sig_g = QuantifiedSignal('g')
-        sig_r = QuantifiedSignal('r')
+        sig_g = QuantifiedSignal('g', (0,))
+        sig_r = QuantifiedSignal('r', (0,))
         signal_by_name = {'r': sig_r, 'g': sig_g}
 
         initial_nodes, rejecting_nodes, nodes, _ = _get_hacked_ucw(text, signal_by_name)
@@ -75,8 +75,8 @@ class Test(unittest.TestCase):
             accept_all :    /* 1 */
                 skip
             }"""
-        sig_g = QuantifiedSignal('g')
-        sig_r = QuantifiedSignal('r')
+        sig_g = QuantifiedSignal('g', (0,))
+        sig_r = QuantifiedSignal('r', (0,))
         signal_by_name = {'r': sig_r, 'g': sig_g}
         initial_nodes, rejecting_nodes, nodes, _ = _get_hacked_ucw(text, signal_by_name)
 
@@ -107,8 +107,8 @@ class Test(unittest.TestCase):
             accept_all :    /* 1 */
                 skip
             }"""
-        sig_g = QuantifiedSignal('g')
-        sig_r = QuantifiedSignal('r')
+        sig_g = QuantifiedSignal('g', (0,))
+        sig_r = QuantifiedSignal('r', (0,))
         signal_by_name = {'r': sig_r, 'g': sig_g}
         initial_nodes, rejecting_nodes, nodes, _ = _get_hacked_ucw(text, signal_by_name)
 
@@ -160,5 +160,5 @@ class Test(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
+    # import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
