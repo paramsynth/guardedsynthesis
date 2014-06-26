@@ -1,0 +1,6 @@
+# ignore all settings subfolders
+
+.settings/
+.pydevproject
+.project
+*.dot

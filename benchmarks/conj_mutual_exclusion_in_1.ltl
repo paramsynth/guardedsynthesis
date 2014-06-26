@@ -1,0 +1,22 @@
+# Mutual exclusion
+# requests are granted eventually
+# no initial spurious grants
+# grants lowered unless request remains high
+
+[GENERAL]
+templates: 1
+
+[INPUT_VARIABLES]
+r_0;
+
+[OUTPUT_VARIABLES]
+g_0;
+
+[ASSUMPTIONS]
+
+[GUARANTEES]
+Forall (i,j) G(!(g_0_i=1 * g_0_j=1));
+Forall (i) G((r_0_i=1 * active_0_i=1) -> (F(g_0_i=1)));
+
+Forall (i) G(g_0_i=1 -> (g_0_i=1) U (((g_0_i=0) U (r_0_i=1 * active_0_i=1)) + G(g_0_i=0)));
+Forall (i) (!((r_0_i=0 * g_0_i=0) U (r_0_i=0 * g_0_i=1)));

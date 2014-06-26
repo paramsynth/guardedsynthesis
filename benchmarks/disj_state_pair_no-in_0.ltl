@@ -1,0 +1,17 @@
+# Processes of both templates must synchronize infinitely often
+
+[GENERAL]
+templates: 2
+
+[INPUT_VARIABLES]
+
+[OUTPUT_VARIABLES]
+g_0;
+g_1;
+
+[ASSUMPTIONS]
+
+[GUARANTEES]
+Forall (i,j) G(F(g_0_i=1 * g_1_j=1));
+Forall (i) (G(F(g_0_i=1)) * G(F(g_0_i=0)));
+Forall (i) (G(F(g_1_i=1)) * G(F(g_1_i=0)));

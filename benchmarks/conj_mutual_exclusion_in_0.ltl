@@ -1,0 +1,17 @@
+# Mutual exclusion
+# request is granted eventually
+
+[GENERAL]
+templates: 1
+
+[INPUT_VARIABLES]
+r_0;
+
+[OUTPUT_VARIABLES]
+g_0;
+
+[ASSUMPTIONS]
+
+[GUARANTEES]
+Forall (i,j) G(!(g_0_i=1 * g_0_j=1));
+Forall (i) G((active_0_i=1 * r_0_i=1) -> F(g_0_i=1));
